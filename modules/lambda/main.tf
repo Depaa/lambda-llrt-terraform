@@ -40,7 +40,26 @@ resource "aws_lambda_function" "this" {
   role          = aws_iam_role.lambda_execution_role.arn
   handler       = var.lambda_handler_location
   runtime       = "provided.al2023"
-  architectures = [ "arm64" ]
+  architectures = ["arm64"]
+  memory_size   = 128
+  timeout       = 30
+
+  filename         = data.archive_file.lambda_zip.output_path
+  source_code_hash = data.archive_file.lambda_zip.output_base64sha256
+
+  environment {
+    variables = var.environment_variables
+  }
+
+  tags = var.tags
+}
+
+resource "aws_lambda_function" "this_comparison" {
+  function_name = "${var.lambda_name}-comparison"
+  role          = aws_iam_role.lambda_execution_role.arn
+  handler       = var.lambda_handler_location
+  runtime       = "nodejs20.x"
+  architectures = ["arm64"]
   memory_size   = 128
   timeout       = 30
 
@@ -79,4 +98,3 @@ resource "null_resource" "cleanup_lambda" {
 
   depends_on = [data.archive_file.lambda_zip]
 }
-
