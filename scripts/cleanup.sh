@@ -12,5 +12,4 @@ rm -rf "$LAMBDA_SRC_DIR_PATH/node_modules"
 rm -rf "$LAMBDA_SRC_DIR_PATH/package.json"
 rm -rf "$LAMBDA_SRC_DIR_PATH/package-lock.json"
 
-
 echo "Cleanup completed."

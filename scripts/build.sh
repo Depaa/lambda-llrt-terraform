@@ -80,6 +80,8 @@ cp "$CACHE_DIR/$BINARY_NAME" "$LAMBDA_SRC_DIR_PATH/$DIST_DIR/"
 INPUT_FILE=$LAMBDA_SRC_DIR_PATH/handler.js
 OUTPUT_FILE=$LAMBDA_SRC_DIR_PATH/$DIST_DIR/index.mjs
 
+# Build the Lambda function using esbuild
+# It will use the script build.cjs
 INPUT_FILE=$INPUT_FILE OUTPUT_FILE=$OUTPUT_FILE npm run esbuild
 
 echo "Build completed. The package is located in the $LAMBDA_SRC_DIR_PATH directory."
