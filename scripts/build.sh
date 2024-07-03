@@ -7,7 +7,7 @@ LAMBDA_SRC_DIR_PATH="$LAMBDA_SRC_DIR_PATH"
 CACHE_DIR=".tmp"
 BINARY_NAME="bootstrap"
 BINARY_URL="$BINARY_URL"
-DIST_DIR="./dist"
+DIST_DIR="dist"
 
 # Navigate to the root directory
 ROOT_DIR="$(pwd)"
@@ -75,7 +75,7 @@ fi
 mkdir -p "$LAMBDA_SRC_DIR_PATH/$DIST_DIR"
 
 # Copy the binary to the Lambda source directory
-cp "${CACHE_DIR}/${BINARY_NAME}" "${LAMBDA_SRC_DIR_PATH}/$DIST_DIR/"
+cp "$CACHE_DIR/$BINARY_NAME" "$LAMBDA_SRC_DIR_PATH/$DIST_DIR/"
 
 INPUT_FILE=$LAMBDA_SRC_DIR_PATH/handler.js
 OUTPUT_FILE=$LAMBDA_SRC_DIR_PATH/$DIST_DIR/index.mjs

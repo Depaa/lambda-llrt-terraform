@@ -24,6 +24,7 @@ export {
 
 // eslint-disable-next-line no-unused-vars
 export async function main(event) {
+  console.log('hello world');
   return {
     statusCode: 200,
     body: JSON.stringify({ message: 'Hello World' }),

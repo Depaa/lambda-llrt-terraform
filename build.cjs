@@ -1,8 +1,8 @@
 const esbuild = require('esbuild');
 
 esbuild.build({
-  entryPoints: ['src/service-a/post/handler.js'],
-  outfile: 'src/service-a/post/dist/index.mjs',
+  entryPoints: [process.env.INPUT_FILE],
+  outfile: process.env.OUTPUT_FILE,
   bundle: true,
   minify: true,
   sourcemap: true,
@@ -34,19 +34,4 @@ esbuild.build({
     '@smithy',
     'uuid',
   ],
-  // nodePaths: ['./node_modules'],
-
-  // plugins: [
-  //   {
-  //     name: 'node-modules',
-  //     setup(build) {
-  //       build.onResolve({ filter: /^@aws-sdk\/client-rds-data$/ }, args => {
-  //         return { path: require.resolve(args.path, { paths: [args.resolveDir] }) };
-  //       });
-  //       build.onResolve({ filter: /^aws-xray-sdk$/ }, args => {
-  //         return { path: require.resolve(args.path, { paths: [args.resolveDir] }) };
-  //       });
-  //     },
-  //   },
-  // ],
 }).catch(() => process.exit(1));

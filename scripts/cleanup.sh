@@ -4,7 +4,7 @@ set -e
 
 # Define variables
 LAMBDA_SRC_DIR_PATH="$LAMBDA_SRC_DIR_PATH"
-DIST_DIR="./dist"
+DIST_DIR="dist"
 
 # Navigate to the root directory
 rm -rf "$LAMBDA_SRC_DIR_PATH/$DIST_DIR"
