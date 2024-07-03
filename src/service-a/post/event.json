@@ -1,0 +1,39 @@
+{
+  "version": "2.0",
+  "routeKey": "POST /service-a",
+  "rawPath": "/service-a",
+  "rawQueryString": "",
+  "headers": {
+    "accept": "*/*",
+    "accept-encoding": "gzip, deflate, br",
+    "content-length": "20",
+    "content-type": "application/json",
+    "host": "xxxxxxxxxx.execute-api.eu-central-1.amazonaws.com",
+    "postman-token": "8265635f-e4c9-4176-b9b1-a0dba8fce072",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "x-amzn-trace-id": "Root=1-667dceeb-1b283df120cb6c8637c6f919",
+    "x-forwarded-for": "00.00.000.00",
+    "x-forwarded-port": "443",
+    "x-forwarded-proto": "https"
+  },
+  "requestContext": {
+    "accountId": "123456789012",
+    "apiId": "xxxxxxxxxx",
+    "domainName": "xxxxxxxxxx.execute-api.eu-central-1.amazonaws.com",
+    "domainPrefix": "xxxxxxxxxx",
+    "http": {
+      "method": "POST",
+      "path": "/service-a",
+      "protocol": "HTTP/1.1",
+      "sourceIp": "00.00.000.00",
+      "userAgent": "PostmanRuntime/7.37.3"
+    },
+    "requestId": "aC1E0gXNFiAEJMA=",
+    "routeKey": "POST /service-a",
+    "stage": "$default",
+    "time": "27/Jun/2024:20:43:23 +0000",
+    "timeEpoch": 1719521003311
+  },
+  "body": "{\n    \"test\": \"hi\"\n}",
+  "isBase64Encoded": false
+}
